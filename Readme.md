@@ -12,11 +12,11 @@ A simple TCP chat server written in Go. Multiple clients can connect (up to 10),
 - Timestamped message format: `[YYYY-MM-DD HH:MM:SS][username]:`
 
 ## Project structure
-- `net-cat/net-cat/main.go` — program entry point (parses port arg and starts server)
-- `net-cat/net-cat/funces/TCPfuntion.go` — TCP listener and connection accept loop (`Connection()`)
-- `net-cat/net-cat/funces/handleconx.go` — per-connection handler, broadcasting, names & messages storage
-- `net-cat/net-cat/funces/MessageForma.go` — message prefix formatting
-- `net-cat/net-cat/funces/valid.go` — validation helpers for names and messages
+- `net-cat/main.go` — program entry point (parses port arg and starts server)
+- `net-cat/funces/TCPfuntion.go` — TCP listener and connection accept loop (`Connection()`)
+- `net-cat/funces/handleconx.go` — per-connection handler, broadcasting, names & messages storage
+- `net-cat/funces/MessageForma.go` — message prefix formatting
+- `net-cat/funces/valid.go` — validation helpers for names and messages
 
 ## Requirements
 - Go 1.20+ (any recent Go version should work)
@@ -26,7 +26,7 @@ From the repository root:
 
 - Run directly:
   ```bash
-  go run ./net-cat/net-cat [PORT]
+  go run ./net-cat [PORT]
   ```
   Examples:
   - Default port 8989:
@@ -92,6 +92,6 @@ Leaving the session (e.g., closing the terminal) notifies others:
 ## Troubleshooting
 - Port already in use: choose a different port (e.g., `3000`).
 - Firewall rules may block inbound connections; allow the chosen port locally if needed.
-- If `go run ./net-cat/net-cat` fails, ensure you are at the repository root and have a recent Go toolchain installed.
+- If `go run ./net-cat` fails, ensure you are at the repository root and have a recent Go toolchain installed.
 
 
